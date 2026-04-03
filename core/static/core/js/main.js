@@ -173,66 +173,7 @@
     }
 
     /* ----------------------------------------------------------------------
-       7. Custom Cursor
-       ---------------------------------------------------------------------- */
-    function initCustomCursor() {
-        // Only on devices with a pointer (no touch)
-        if (window.matchMedia('(hover: none)').matches) return;
-        if (prefersReducedMotion) return;
-        if (typeof gsap === 'undefined') return;
-
-        const cursor = document.querySelector('.cursor');
-        if (!cursor) return;
-
-        let mouseX = 0;
-        let mouseY = 0;
-
-        document.addEventListener('mousemove', function (e) {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-
-            if (!cursor.classList.contains('is-visible')) {
-                cursor.classList.add('is-visible');
-            }
-        });
-
-        // Follow with slight lag
-        gsap.ticker.add(function () {
-            gsap.to(cursor, {
-                x: mouseX,
-                y: mouseY,
-                duration: 0.3,
-                ease: 'power2.out',
-                overwrite: 'auto',
-            });
-        });
-
-        // Grow cursor on hoverable elements
-        var hoverTargets = document.querySelectorAll(
-            'a, button, [data-underline], input, textarea'
-        );
-
-        hoverTargets.forEach(function (el) {
-            el.addEventListener('mouseenter', function () {
-                cursor.classList.add('is-hovering');
-            });
-            el.addEventListener('mouseleave', function () {
-                cursor.classList.remove('is-hovering');
-            });
-        });
-
-        // Hide when mouse leaves window
-        document.addEventListener('mouseleave', function () {
-            cursor.classList.remove('is-visible');
-        });
-
-        document.addEventListener('mouseenter', function () {
-            cursor.classList.add('is-visible');
-        });
-    }
-
-    /* ----------------------------------------------------------------------
-       8. Smooth Scroll for Anchor Links
+       7. Smooth Scroll for Anchor Links
        ---------------------------------------------------------------------- */
     function initSmoothScroll() {
         var anchors = document.querySelectorAll('a[href^="#"]');
@@ -460,7 +401,6 @@
         initSmoothScroll();
         initLazyLoading();
         initFadeUp();
-        initCustomCursor();
 
         // GSAP-dependent initialisations
         if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {

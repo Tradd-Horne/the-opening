@@ -3,7 +3,7 @@ version: '3.8'
 services:
   web:
     build: .
-    command: gunicorn theopening.wsgi:application --bind 0.0.0.0:8000 --workers 1 --reload
+    command: bash -c "python manage.py collectstatic --noinput && python manage.py migrate && gunicorn theopening.wsgi:application --bind 0.0.0.0:8000 --workers 1 --reload"
     volumes:
       - .:/app
     ports:
