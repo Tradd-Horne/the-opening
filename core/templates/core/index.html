@@ -1,0 +1,77 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}The Opening — Where Psychology Meets Creativity{% endblock %}
+
+{% block content %}
+
+<!-- Section 1: Hero -->
+<section class="hero">
+    <div class="hero__bg">
+        <img src="{% static 'core/images/hero.jpg' %}" alt="" class="hero__bg-img parallax-img" loading="eager">
+    </div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+        <h1 class="display-h hero__title">The Opening</h1>
+        <p class="hero__subtitle">Where psychology meets creativity</p>
+    </div>
+</section>
+
+<!-- Section 2: Manifesto -->
+<section class="section section--manifesto">
+    <div class="section__inner">
+        <p class="h-xlarge split-text">We are a collective of psychologists, artists, and creative thinkers exploring the intersection of the mind and creative expression.</p>
+    </div>
+</section>
+
+<!-- Section 3: Three Pillars -->
+<section class="section section--pillar">
+    <div class="pillar__border"></div>
+    <div class="pillar__content">
+        <h2 class="display-h-small pillar__heading">Exploration</h2>
+        <p class="pillar__question txt-large">How might creative expression illuminate the landscapes of the mind?</p>
+        <p class="pillar__answer">Through art-based therapeutic practice, we help individuals explore emotions, patterns, and possibilities that words alone cannot reach.</p>
+    </div>
+    <div class="pillar__image-wrap">
+        <img src="{% static 'core/images/creative-session.jpg' %}" alt="Creative therapeutic session" class="pillar__image parallax-img" loading="lazy">
+    </div>
+</section>
+
+<section class="section section--pillar">
+    <div class="pillar__border"></div>
+    <div class="pillar__content">
+        <h2 class="display-h-small pillar__heading">Transformation</h2>
+        <p class="pillar__question txt-large">What happens when vulnerability becomes a creative act?</p>
+        <p class="pillar__answer">Our practitioners guide a process where personal challenges become the raw material for growth, insight, and renewal.</p>
+    </div>
+    <div class="pillar__image-wrap">
+        <img src="{% static 'core/images/therapy-space.jpg' %}" alt="Therapeutic space" class="pillar__image parallax-img" loading="lazy">
+    </div>
+</section>
+
+<section class="section section--pillar">
+    <div class="pillar__border"></div>
+    <div class="pillar__content">
+        <h2 class="display-h-small pillar__heading">Connection</h2>
+        <p class="pillar__question txt-large">Can shared creative experience build bridges between inner worlds?</p>
+        <p class="pillar__answer">Group workshops, collaborative projects, and collective exhibitions create spaces where healing happens through community.</p>
+    </div>
+    <div class="pillar__image-wrap">
+        <img src="{% static 'core/images/gallery.jpg' %}" alt="Gallery exhibition" class="pillar__image parallax-img" loading="lazy">
+    </div>
+</section>
+
+<!-- Section 4: CTA -->
+<section class="section section--cta">
+    <div class="section--cta__bg">
+        <img src="{% static 'core/images/abstract-art.jpg' %}" alt="" class="section--cta__bg-img parallax-img" loading="lazy">
+    </div>
+    <div class="section--cta__overlay"></div>
+    <div class="section--cta__content">
+        <h2 class="display-h-small">Enter the Space</h2>
+        <p class="section--cta__text">We invite artists, thinkers, and seekers to explore what becomes possible when psychology and creativity converge.</p>
+        <a href="{% url 'work' %}" class="section--cta__link" data-underline>View our work &rarr;</a>
+    </div>
+</section>
+
+{% endblock %}

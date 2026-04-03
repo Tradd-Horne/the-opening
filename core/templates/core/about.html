@@ -1,0 +1,77 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}About — The Opening{% endblock %}
+
+{% block content %}
+
+<!-- Hero -->
+<section class="hero hero--page">
+    <div class="hero__bg">
+        <img src="{% static 'core/images/meditation.jpg' %}" alt="" class="hero__bg-img parallax-img" loading="eager">
+    </div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+        <h1 class="display-h hero__title">About</h1>
+    </div>
+</section>
+
+<!-- Premise -->
+<section class="section section--text">
+    <div class="section__inner">
+        <p class="h-xlarge split-text">The Opening was founded on a simple premise: that the creative process and the therapeutic process are deeply interconnected.</p>
+    </div>
+</section>
+
+<!-- Values -->
+<section class="section section--values">
+    <div class="section__inner">
+        <div class="values-grid">
+            <div class="value-pair">
+                <div class="value-pair__border"></div>
+                <div class="value-pair__items">
+                    <div class="value-pair__item">
+                        <h3 class="display-h-small">Depth</h3>
+                    </div>
+                    <div class="value-pair__divider"></div>
+                    <div class="value-pair__item">
+                        <h3 class="display-h-small">Expression</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="value-pair">
+                <div class="value-pair__border"></div>
+                <div class="value-pair__items">
+                    <div class="value-pair__item">
+                        <h3 class="display-h-small">Evidence</h3>
+                    </div>
+                    <div class="value-pair__divider"></div>
+                    <div class="value-pair__item">
+                        <h3 class="display-h-small">Intuition</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="value-pair">
+                <div class="value-pair__border"></div>
+                <div class="value-pair__items">
+                    <div class="value-pair__item">
+                        <h3 class="display-h-small">Individual</h3>
+                    </div>
+                    <div class="value-pair__divider"></div>
+                    <div class="value-pair__item">
+                        <h3 class="display-h-small">Collective</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Approach -->
+<section class="section section--text">
+    <div class="section__inner">
+        <p class="h-xlarge split-text">Our approach draws from evidence-based psychology — CBT, ACT, psychodynamic practice — while honouring the transformative power of creative expression.</p>
+    </div>
+</section>
+
+{% endblock %}
