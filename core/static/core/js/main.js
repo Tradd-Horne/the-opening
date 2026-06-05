@@ -121,7 +121,36 @@
     }
 
     /* ----------------------------------------------------------------------
-       6. Hamburger Menu
+       6. Theme Toggle
+       ---------------------------------------------------------------------- */
+    function initThemeToggle() {
+        var toggle = document.getElementById('theme-toggle');
+        if (!toggle) return;
+
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+        }
+
+        function toggleTheme() {
+            var currentTheme = document.documentElement.getAttribute('data-theme');
+            var newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            setTheme(newTheme);
+        }
+
+        toggle.addEventListener('click', toggleTheme);
+
+        // Handle keyboard accessibility
+        toggle.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleTheme();
+            }
+        });
+    }
+
+    /* ----------------------------------------------------------------------
+       7. Hamburger Menu
        ---------------------------------------------------------------------- */
     function initMobileMenu() {
         const hamburger = document.querySelector('.nav__hamburger');
@@ -396,6 +425,7 @@
        Initialise Everything on DOMContentLoaded
        ---------------------------------------------------------------------- */
     document.addEventListener('DOMContentLoaded', function () {
+        initThemeToggle();
         initFooterYear();
         initMobileMenu();
         initSmoothScroll();
