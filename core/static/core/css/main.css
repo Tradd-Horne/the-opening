@@ -540,6 +540,7 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 2;
     max-width: 900px;
     mix-blend-mode: exclusion;
+    color: var(--color-white);
 }
 
 .section--cta__content .display-h-small {
