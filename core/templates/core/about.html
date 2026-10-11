@@ -1,25 +1,37 @@
 {% extends "core/base.html" %}
 {% load static %}
 
-{% block title %}About — The Opening{% endblock %}
+{% block title %}About Tahnee — The Opening{% endblock %}
+{% block meta_description %}Tahnee is a provisional psychologist working with people across the lifespan, drawing on narrative therapy, ACT, MI and Trauma-Focused CBT.{% endblock %}
 
 {% block content %}
 
 <!-- Hero -->
 <section class="hero hero--page">
-    <div class="hero__bg">
-        <img src="{% static 'core/images/meditation.jpg' %}" alt="" class="hero__bg-img parallax-img" loading="eager">
-    </div>
-    <div class="hero__overlay"></div>
+    <div class="hero__overlay hero__overlay--solid"></div>
     <div class="hero__content">
         <h1 class="display-h hero__title">About</h1>
     </div>
 </section>
 
-<!-- Premise -->
-<section class="section section--text">
+<!-- Profile -->
+<section class="section section--collective">
     <div class="section__inner">
-        <p class="h-xlarge split-text">The Opening was founded on a simple premise: that the creative process and the therapeutic process are deeply interconnected.</p>
+
+        <article class="team-member">
+            <div class="team-member__image-wrap">
+                <img src="{% static 'core/images/tahnee.jpg' %}" alt="Tahnee, provisional psychologist" class="team-member__image parallax-img" loading="lazy">
+            </div>
+            <div class="team-member__info">
+                <h2 class="team-member__name">Tahnee</h2>
+                <p class="team-member__title">Provisional Psychologist</p>
+                <p class="team-member__bio">Tahnee is a provisional psychologist who works with people across the lifespan from a person-centred foundation, drawing on narrative therapy and a range of evidence-based practices including ACT, MI, and Trauma-Focused CBT.</p>
+                <p class="team-member__bio">She brings an authentic and collaborative style, and has an openness to the many ways people understand and express their own experience. She has an interest in perinatal psychology and is available to connect with parent groups and community settings.</p>
+                <p class="team-member__bio">She welcomes First Nations peoples, LGBTIQA+ communities, and those navigating intersecting identities. Outside of her clinical work, she is engaged in qualitative research exploring how people understand and make meaning of diverse and transformative experiences.</p>
+                <p class="team-member__bio">Tahnee holds a Bachelor of Psychology and is completing a Master of Clinical Psychology.</p>
+            </div>
+        </article>
+
     </div>
 </section>
 
@@ -31,11 +43,11 @@
                 <div class="value-pair__border"></div>
                 <div class="value-pair__items">
                     <div class="value-pair__item">
-                        <h3 class="display-h-small">Depth</h3>
+                        <h3 class="display-h-small">Authentic</h3>
                     </div>
                     <div class="value-pair__divider"></div>
                     <div class="value-pair__item">
-                        <h3 class="display-h-small">Expression</h3>
+                        <h3 class="display-h-small">Narrative</h3>
                     </div>
                 </div>
             </div>
@@ -47,30 +59,11 @@
                     </div>
                     <div class="value-pair__divider"></div>
                     <div class="value-pair__item">
-                        <h3 class="display-h-small">Intuition</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="value-pair">
-                <div class="value-pair__border"></div>
-                <div class="value-pair__items">
-                    <div class="value-pair__item">
-                        <h3 class="display-h-small">Individual</h3>
-                    </div>
-                    <div class="value-pair__divider"></div>
-                    <div class="value-pair__item">
-                        <h3 class="display-h-small">Collective</h3>
+                        <h3 class="display-h-small">Open</h3>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
-<!-- Approach -->
-<section class="section section--text">
-    <div class="section__inner">
-        <p class="h-xlarge split-text">Our approach draws from evidence-based psychology — CBT, ACT, psychodynamic practice — while honouring the transformative power of creative expression.</p>
     </div>
 </section>
 

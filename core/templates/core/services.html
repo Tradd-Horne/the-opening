@@ -1,0 +1,56 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Services — The Opening{% endblock %}
+{% block meta_description %}Individual psychology for people across the lifespan, perinatal support, and talks for parent groups and community settings. Self-funded, NDIS and WorkCover.{% endblock %}
+
+{% block content %}
+
+<!-- Hero -->
+<section class="hero hero--page">
+    <div class="hero__overlay hero__overlay--solid"></div>
+    <div class="hero__content">
+        <h1 class="display-h hero__title">Services</h1>
+    </div>
+</section>
+
+<section class="section section--work">
+    <div class="section__inner">
+        <div class="work-grid">
+
+            <article class="work-card">
+                <div class="work-card__image-wrap">
+                    <img src="{% static 'core/images/svc-individual.jpg' %}" alt="Two armchairs in a calm room" class="work-card__image" loading="lazy">
+                </div>
+                <h3 class="work-card__title">Individual Therapy</h3>
+                <p class="work-card__desc">One-to-one sessions for people across the lifespan. A person-centred foundation, with narrative therapy, ACT, MI and Trauma-Focused CBT used where they fit.</p>
+            </article>
+
+            <article class="work-card">
+                <div class="work-card__image-wrap">
+                    <img src="{% static 'core/images/svc-perinatal.jpg' %}" alt="A newborn holding a parent's finger" class="work-card__image" loading="lazy">
+                </div>
+                <h3 class="work-card__title">Perinatal Psychology</h3>
+                <p class="work-card__desc">Support through pregnancy, birth and the early months of parenthood, for the changes and challenges this time can bring.</p>
+            </article>
+
+            <article class="work-card">
+                <div class="work-card__image-wrap">
+                    <img src="{% static 'core/images/svc-community.jpg' %}" alt="A circle of chairs in a community hall" class="work-card__image" loading="lazy">
+                </div>
+                <h3 class="work-card__title">Parent Groups &amp; Community</h3>
+                <p class="work-card__desc">Tahnee is available to connect with parent groups and community settings. Get in touch to talk about what your group needs.</p>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- Funding -->
+<section class="section section--text">
+    <div class="section__inner">
+        <p class="h-xlarge split-text">Self-funded and private clients, NDIS participants, and WorkCover claims are all welcome.</p>
+    </div>
+</section>
+
+{% endblock %}
