@@ -1122,3 +1122,36 @@ h1, h2, h3, h4, h5, h6 {
         transform: none;
     }
 }
+
+/* Profile copy: space between bio paragraphs */
+.team-member__bio + .team-member__bio {
+    margin-top: 1.2em;
+}
+
+/* Single-practitioner profile: photo beside the text on wide screens */
+@media (min-width: 993px) {
+    .team-member {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 4rem;
+    }
+
+    .team-member__image-wrap {
+        flex: 0 0 38%;
+        max-width: 520px;
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 992px) {
+    .team-member__image-wrap {
+        aspect-ratio: 4 / 5;
+    }
+}
+
+/* Phone: keep the brand clear of the nav links */
+@media (max-width: 479px) {
+    .nav__brand {
+        font-size: 1.5rem;
+    }
+}

@@ -1,6 +1,4 @@
-from django.views.generic import TemplateView, FormView
-from django.urls import reverse_lazy
-from .forms import ContactForm
+from django.views.generic import TemplateView
 
 
 class IndexView(TemplateView):
@@ -11,19 +9,9 @@ class AboutView(TemplateView):
     template_name = 'core/about.html'
 
 
-class WorkView(TemplateView):
-    template_name = 'core/work.html'
+class ServicesView(TemplateView):
+    template_name = 'core/services.html'
 
 
-class CollectiveView(TemplateView):
-    template_name = 'core/collective.html'
-
-
-class ContactView(FormView):
+class ContactView(TemplateView):
     template_name = 'core/contact.html'
-    form_class = ContactForm
-    success_url = reverse_lazy('contact')
-
-    def form_valid(self, form):
-        # TODO: send email or store submission
-        return super().form_valid(form)
