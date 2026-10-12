@@ -11,11 +11,11 @@
 
 :root {
   /* ===================== PALETTE (edit me) ===================== */
-  --primary:       #66814f;   /* sage green — buttons, kickers, accents */
+  --primary:       #5c7646;   /* sage green — buttons, kickers, accents */
   --primary-deep:  #6a855824; /* (unused tint slot) */
   --primary-dark:  #384433;   /* hero overlay + footer — deep eucalyptus */
-  --accent:        #7d9767;   /* lighter sage — secondary CTA block */
-  --accent-2:      #556e45;   /* darker sage — tertiary CTA block */
+  --accent:        #e8ede2;   /* lighter sage — secondary CTA block */
+  --accent-2:      #47603a;   /* darker sage — tertiary CTA block */
   --paper:         #f6f6f2;   /* soft off-white alt section */
   --bg:            #ffffff;
   --ink:           #3f4038;   /* headings */
@@ -270,7 +270,9 @@ p { text-wrap: pretty; }
 /* CTA blocks */
 .cta-tri a { min-height: 170px; transition: filter .35s var(--ease), letter-spacing .5s var(--ease); }
 .cta-tri a:hover { filter: brightness(1.08); letter-spacing: 0.24em; }
-.cta-tri a small { font-size: 0.9rem; }
+.cta-tri a small { font-size: 0.9rem; opacity: 1; }
+.cta-tri a:nth-child(2) { color: var(--ink); }
+.pcard h2 { font-size: 1.15rem; letter-spacing: 0.03em; margin-bottom: 0.15rem; }
 
 /* Scroll reveal */
 .js [data-reveal] { opacity: 0; transform: translateY(26px);
