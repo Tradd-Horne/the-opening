@@ -1,74 +1,123 @@
-{% extends "core/base.html" %}
+{% extends 'core/base.html' %}
 {% load static %}
-
-{% block title %}The Opening — Psychology with Tahnee Crowther, Provisional Psychologist{% endblock %}
 
 {% block content %}
 
-<!-- Section 1: Hero -->
-<section class="hero">
-    <div class="hero__bg">
-        <img src="{% static 'core/images/hero.jpg' %}" alt="" class="hero__bg-img parallax-img" loading="eager">
-    </div>
-    <div class="hero__overlay"></div>
-    <div class="hero__circle"></div>
+{# ───────────────────────── HERO ───────────────────────── #}
+<section class="hero" style="background-image: linear-gradient(180deg, rgba(45,54,42,0.62), rgba(45,54,42,0.72)), url('{% static 'core/images/hero.jpg' %}');">
+  <h1>Space to explore<br>what matters to you.</h1>
+  <p class="hero-sub">Person-centred, evidence-based therapy for people across the lifespan.</p>
+  <a href="#contact" class="btn btn-light">Enquire now</a>
 </section>
 
-<!-- Section 2: Manifesto -->
-<section class="section section--manifesto">
-    <div class="section__inner">
-        <p class="h-xlarge split-text">Psychology for people across the lifespan, grounded in a person-centred way of working and open to the many ways people understand their own experience.</p>
-    </div>
+<div class="divider"><span></span></div>
+
+{# ───────────────────────── INTRO ───────────────────────── #}
+<section class="intro">
+  <div class="container narrow">
+    <p>Some of what we carry is hard to put into words. Therapy with Tahnee is a space to explore what brings
+       you here — and what you hope might be different — making sense of your own experience and turning that
+       understanding into meaningful action. You're welcome here.</p>
+    <p class="lead-strong">What becomes possible, given room to understand it?</p>
+    <a href="#contact" class="btn">Make an enquiry</a>
+  </div>
 </section>
 
-<!-- Section 3: Three Pillars -->
-<section class="section section--pillar">
-    <div class="pillar__border"></div>
-    <div class="pillar__content">
-        <h2 class="display-h-small pillar__heading">Person-centred</h2>
-        <p class="pillar__question txt-large">You are the expert on your own life.</p>
-        <p class="pillar__answer">Sessions are authentic and collaborative. We work out together what matters to you and how you want to approach it.</p>
+{# ───────────────────────── THREE PHOTO-CARDS ───────────────────────── #}
+<section class="cards">
+  <div class="container">
+    <div class="cards-grid">
+
+      <article class="pcard" id="about">
+        <div class="pcard-photo"><img src="{% static 'core/images/tahnee.jpg' %}" alt="Tahnee Crowther, Provisional Psychologist"></div>
+        <h3>About Tahnee</h3>
+        <p class="pcard-role">Who I am</p>
+        <p>A Provisional Psychologist working with people across the lifespan, with an authentic and
+           collaborative style and an openness to the many ways people understand and express their own
+           experience.</p>
+        <a href="#about-detail" class="btn btn-outline btn-sm">Read more</a>
+      </article>
+
+      <article class="pcard" id="help">
+        <div class="pcard-photo"><img src="{% static 'core/images/help.jpg' %}" alt="A calm, comfortable space for therapy"></div>
+        <h3>How I help</h3>
+        <p class="pcard-role">What I focus on</p>
+        <p>An interest in perinatal psychology and the changes of early parenthood, and in the questions of
+           meaning and identity that shape a life. Available to connect with parent groups and community
+           settings.</p>
+        <a href="#help-detail" class="btn btn-outline btn-sm">Explore</a>
+      </article>
+
+      <article class="pcard" id="approach">
+        <div class="pcard-photo"><img src="{% static 'core/images/approach.jpg' %}" alt="A considered, evidence-based approach"></div>
+        <h3>My approach</h3>
+        <p class="pcard-role">How we'll work</p>
+        <p>A person-centred foundation, drawing on narrative therapy and a range of evidence-based practices
+           including Acceptance &amp; Commitment Therapy (ACT), Motivational Interviewing (MI) and
+           Trauma-Focused CBT.</p>
+        <a href="#contact" class="btn btn-outline btn-sm">Get started</a>
+      </article>
+
     </div>
-    <div class="pillar__image-wrap">
-        <img src="{% static 'core/images/therapy-space.jpg' %}" alt="A calm therapy room" class="pillar__image parallax-img" loading="lazy">
-    </div>
+  </div>
 </section>
 
-<section class="section section--pillar">
-    <div class="pillar__border"></div>
-    <div class="pillar__content">
-        <h2 class="display-h-small pillar__heading">Narrative</h2>
-        <p class="pillar__question txt-large">The stories we tell shape how we live.</p>
-        <p class="pillar__answer">Narrative therapy looks at the stories people hold about themselves, and helps make room for ones that fit better.</p>
-    </div>
-    <div class="pillar__image-wrap">
-        <img src="{% static 'core/images/pillar-narrative.jpg' %}" alt="An open notebook and pen" class="pillar__image parallax-img" loading="lazy">
-    </div>
+{# ───────────────────────── ABOUT (full bio) ───────────────────────── #}
+<section class="intro" id="about-detail">
+  <div class="container narrow">
+    <p class="kicker">About Tahnee</p>
+    <h2>Tahnee Crowther</h2>
+    <p>Tahnee is a provisional psychologist who works with people across the lifespan from a person-centred
+       foundation, drawing on narrative therapy and a range of evidence-based practices including ACT, MI, and
+       Trauma-Focused CBT.</p>
+    <p>She brings an authentic and collaborative style, and has an openness to the many ways people understand
+       and express their own experience. She has an interest in perinatal psychology and is available to
+       connect with parent groups and community settings.</p>
+    <p>She welcomes First Nations peoples, LGBTIQA+ communities, and those navigating intersecting identities.
+       Outside of her clinical work, she is engaged in qualitative research exploring how people understand and
+       make meaning of diverse and transformative experiences.</p>
+    <p>Tahnee holds a Bachelor of Psychology and is completing a Master of Clinical Psychology.</p>
+  </div>
 </section>
 
-<section class="section section--pillar">
-    <div class="pillar__border"></div>
-    <div class="pillar__content">
-        <h2 class="display-h-small pillar__heading">Evidence</h2>
-        <p class="pillar__question txt-large">Approaches with research behind them.</p>
-        <p class="pillar__answer">Including Acceptance and Commitment Therapy (ACT), Motivational Interviewing (MI) and Trauma-Focused CBT, chosen to suit you.</p>
-    </div>
-    <div class="pillar__image-wrap">
-        <img src="{% static 'core/images/meditation.jpg' %}" alt="A quiet moment of reflection" class="pillar__image parallax-img" loading="lazy">
-    </div>
+{# ───────────────────────── REFLECTIVE LINE ───────────────────────── #}
+<section class="reflect">
+  <div class="container">
+    <p>Reaching out takes courage. Whatever brings you here, there is room to be honest — to sit with what's
+       difficult, and to move toward a life that feels more your own.</p>
+    <span class="attrib">Tahnee Crowther · Provisional Psychologist</span>
+  </div>
 </section>
 
-<!-- Section 4: CTA -->
-<section class="section section--cta">
-    <div class="section--cta__bg">
-        <img src="{% static 'core/images/abstract-art.jpg' %}" alt="" class="section--cta__bg-img parallax-img" loading="lazy">
+{# ───────────────────────── AREAS (airy tag list) ───────────────────────── #}
+<section class="areas" id="help-detail">
+  <div class="container">
+    <p class="kicker">How I help</p>
+    <h2>Who I work with</h2>
+    <div class="tag-list">
+      <span>People across the lifespan</span>
+      <span>Perinatal &amp; early parenthood</span>
+      <span>Parent groups &amp; community settings</span>
+      <span>Trauma</span>
+      <span>Meaning &amp; identity</span>
+      <span>First Nations peoples</span>
+      <span>LGBTIQA+ communities</span>
+      <span>Intersecting identities</span>
     </div>
-    <div class="section--cta__overlay"></div>
-    <div class="section--cta__content">
-        <h2 class="display-h-small">Begin</h2>
-        <p class="section--cta__text">Self-funded, NDIS and WorkCover clients are welcome. Get in touch to ask about an appointment.</p>
-        <a href="{% url 'contact' %}" class="section--cta__link" data-underline>Make an enquiry &rarr;</a>
+    <p class="kicker" style="margin-top:2.6rem">Funding</p>
+    <div class="tag-list">
+      <span>Self-funded / Private</span>
+      <span>NDIS</span>
+      <span>WorkCover</span>
     </div>
+  </div>
+</section>
+
+{# ───────────────────────── GREEN TRI-BLOCK CTA ───────────────────────── #}
+<section class="cta-tri" id="contact">
+  <a href="mailto:contact@theopening.com.au">Email us<small>contact@theopening.com.au</small></a>
+  <a href="#help-detail">Funding<small>Private · NDIS · WorkCover</small></a>
+  <a href="mailto:contact@theopening.com.au?subject=Appointment%20enquiry">Enquire<small>Ask about an appointment</small></a>
 </section>
 
 {% endblock %}

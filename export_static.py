@@ -19,7 +19,7 @@ from django.core.management import call_command  # noqa: E402
 from django.test import Client  # noqa: E402
 
 SITE = 'https://theopening.com.au'
-PAGES = ['/', '/about/', '/services/', '/contact/']
+PAGES = ['/']
 DIST = pathlib.Path(__file__).resolve().parent / 'dist'
 
 call_command('collectstatic', '--noinput', '--clear', verbosity=0)
