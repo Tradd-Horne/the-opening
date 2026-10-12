@@ -1,5 +1,5 @@
 /* ============================================================================
-   KOOKABURRA PSYCHOLOGY — minimal, airy practitioner site
+   THE OPENING — minimal, airy practitioner site (from the Kookaburra Psychology design)
    Structure & style modelled on the Fremantle Clinical Psychology layout:
    centred serif-light wordmark, tall muted hero, three photo-cards,
    green tri-block CTA, acknowledgment-of-country footer. Single sage accent,
@@ -11,16 +11,16 @@
 
 :root {
   /* ===================== PALETTE (edit me) ===================== */
-  --primary:       #7f9b6a;   /* sage green — buttons, kickers, accents */
+  --primary:       #66814f;   /* sage green — buttons, kickers, accents */
   --primary-deep:  #6a855824; /* (unused tint slot) */
   --primary-dark:  #384433;   /* hero overlay + footer — deep eucalyptus */
-  --accent:        #9bb083;   /* lighter sage — secondary CTA block */
-  --accent-2:      #6f8a58;   /* darker sage — tertiary CTA block */
+  --accent:        #7d9767;   /* lighter sage — secondary CTA block */
+  --accent-2:      #556e45;   /* darker sage — tertiary CTA block */
   --paper:         #f6f6f2;   /* soft off-white alt section */
   --bg:            #ffffff;
   --ink:           #3f4038;   /* headings */
   --ink-soft:      #6c6c66;   /* body text (soft grey, like the reference) */
-  --ink-mute:      #9a9a92;   /* meta / muted */
+  --ink-mute:      #77776f;   /* meta / muted */
   --rule:          #e7e7e0;   /* hairlines */
   --on-dark:       #ffffff;
   /* ============================================================ */
@@ -202,4 +202,95 @@ p { margin: 0 0 1.1rem; }
   .nav-right .navlink { display: none; }
   .nav-toggle { display: block; }
   .cta-tri { grid-template-columns: 1fr; }
+}
+
+
+/* ============================================================================
+   POLISH + MOTION (12 Oct 2026)
+   Motion is quiet and slow: a settling hero, content easing up as it scrolls in.
+   Everything is visible without JavaScript — the hidden start state only applies
+   once main.js has added .js to <html> — and all motion is off for visitors who
+   ask for reduced motion.
+   ============================================================================ */
+:root { --ease: cubic-bezier(.22, .61, .36, 1); --header-h: 92px; }
+html { scroll-padding-top: calc(var(--header-h) + 12px); }
+body { text-rendering: optimizeLegibility; -moz-osx-font-smoothing: grayscale; }
+h1, h2, .reflect p { text-wrap: balance; }
+p { text-wrap: pretty; }
+::selection { background: #dfe7d6; color: var(--ink); }
+:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; border-radius: 4px; }
+
+/* Header: hairline until you scroll, then a soft lift */
+.site-header { transition: box-shadow .4s var(--ease), border-color .4s var(--ease); }
+.site-header.is-scrolled { box-shadow: 0 6px 24px -12px rgba(40, 48, 36, .18); border-bottom-color: transparent; }
+.nav-left a, .nav-right a.navlink { position: relative; transition: color .25s var(--ease); }
+.nav-left a::after, .nav-right a.navlink::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 1px;
+  background: currentColor; transform: scaleX(0); transform-origin: right; transition: transform .45s var(--ease);
+}
+.nav-left a:hover::after, .nav-right a.navlink:hover::after { transform: scaleX(1); transform-origin: left; }
+
+/* Hero: taller, image on its own layer so it can settle slowly */
+.hero { overflow: hidden; isolation: isolate; min-height: min(78vh, 760px);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; background: #2f3a2a; }
+.hero-media { position: absolute; inset: 0; z-index: -2; }
+.hero-media img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.08); }
+.hero::before { content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(180deg, rgba(40,48,36,.50) 0%, rgba(40,48,36,.62) 55%, rgba(40,48,36,.78) 100%); }
+.hero h1 { font-size: clamp(2.5rem, 5.6vw, 4rem); letter-spacing: 0.005em; line-height: 1.1; }
+.loaded .hero-media img { transform: scale(1); transition: transform 2.8s var(--ease); }
+
+.hero-scroll { position: absolute; bottom: 1.6rem; left: 50%; width: 1px; height: 46px; overflow: hidden;
+  background: rgba(255,255,255,.25); }
+.hero-scroll::after { content: ""; position: absolute; left: 0; top: -46px; width: 1px; height: 46px; background: #fff;
+  animation: scrollcue 2.4s var(--ease) infinite 1.8s; }
+@keyframes scrollcue { to { top: 46px; } }
+
+/* Buttons and pills */
+.btn { text-decoration: none; transition: background .3s var(--ease), color .3s var(--ease), border-color .3s var(--ease),
+  transform .3s var(--ease), box-shadow .3s var(--ease); }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 10px 22px -12px rgba(40,48,36,.45); }
+.btn-light:hover { box-shadow: none; }
+.tag-list span { transition: border-color .3s var(--ease), color .3s var(--ease), background .3s var(--ease); }
+.tag-list span:hover { border-color: var(--primary); color: var(--ink); background: #fafbf8; }
+
+/* Cards: images breathe on hover */
+.pcard-photo { border-radius: 4px; }
+.pcard-photo img { transition: transform 1.2s var(--ease); }
+.pcard:hover .pcard-photo img { transform: scale(1.045); }
+
+/* Divider draws itself */
+.js .divider span { transform: scaleY(0); transform-origin: top; transition: transform 1.2s var(--ease) .2s; }
+.js .divider.is-in span { transform: scaleY(1); }
+
+/* Bio reads as prose, not a centred block */
+#about-detail .bio { text-align: left; max-width: 640px; margin: 1.8rem auto 0; }
+#about-detail h2 { margin-bottom: 0; }
+
+/* CTA blocks */
+.cta-tri a { min-height: 170px; transition: filter .35s var(--ease), letter-spacing .5s var(--ease); }
+.cta-tri a:hover { filter: brightness(1.08); letter-spacing: 0.24em; }
+.cta-tri a small { font-size: 0.9rem; }
+
+/* Scroll reveal */
+.js [data-reveal] { opacity: 0; transform: translateY(26px);
+  transition: opacity 1s var(--ease), transform 1s var(--ease); transition-delay: var(--d, 0s); }
+.js [data-reveal].is-in { opacity: 1; transform: none; }
+.js .hero [data-reveal] { transform: translateY(18px); transition-duration: 1.3s; }
+
+@media (max-width: 720px) {
+  :root { --header-h: 72px; }
+  .brand { text-align: left; }
+  .brand-name { font-size: 1.02rem; letter-spacing: 0.22em; white-space: nowrap; }
+  .brand-sub { font-size: 0.5rem; letter-spacing: 0.2em; margin-top: 0.25rem; white-space: nowrap; }
+  .nav-right .btn-sm { padding: 0.5rem 1rem; font-size: 0.6rem; letter-spacing: 0.14em; }
+  .hero { min-height: 70vh; }
+  .hero-scroll { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .js [data-reveal], .js .divider span { opacity: 1 !important; transform: none !important; }
+  .hero-media img { transform: none !important; }
 }

@@ -4,17 +4,19 @@
 {% block content %}
 
 {# ───────────────────────── HERO ───────────────────────── #}
-<section class="hero" style="background-image: linear-gradient(180deg, rgba(45,54,42,0.62), rgba(45,54,42,0.72)), url('{% static 'core/images/hero.jpg' %}');">
-  <h1>Open to what<br>lies within.</h1>
-  <p class="hero-sub">Psychology that makes room for the feelings and patterns we have learned to set aside.</p>
-  <a href="#contact" class="btn btn-light">Enquire now</a>
+<section class="hero">
+  <div class="hero-media"><img src="{% static 'core/images/hero.jpg' %}" alt="" width="1600" height="900" fetchpriority="high"></div>
+  <h1 data-reveal style="--d:.15s">Open to what<br>lies within.</h1>
+  <p class="hero-sub" data-reveal style="--d:.35s">Psychology that makes room for the feelings and patterns we have learned to set aside.</p>
+  <a href="#contact" class="btn btn-light" data-reveal style="--d:.55s">Enquire now</a>
+  <span class="hero-scroll" aria-hidden="true"></span>
 </section>
 
 <div class="divider"><span></span></div>
 
 {# ───────────────────────── INTRO ───────────────────────── #}
 <section class="intro">
-  <div class="container narrow">
+  <div class="container narrow" data-reveal>
     <p>Much of what shapes us sits just out of view — feelings we have learned to quieten, reactions that
        seem to come from nowhere, patterns that repeat no matter how hard we try. Therapy with Tahnee is a
        space to slow down and turn toward those parts of yourself: to notice them, to understand where they
@@ -29,8 +31,8 @@
   <div class="container">
     <div class="cards-grid">
 
-      <article class="pcard" id="about">
-        <div class="pcard-photo"><img src="{% static 'core/images/tahnee.jpg' %}" alt="Tahnee Crowther, Provisional Psychologist"></div>
+      <article class="pcard" id="about" data-reveal style="--d:0.00s">
+        <div class="pcard-photo"><img src="{% static 'core/images/tahnee.jpg' %}" width="1109" height="832" loading="lazy" decoding="async" alt="Tahnee Crowther, Provisional Psychologist"></div>
         <h3>About Tahnee</h3>
         <p class="pcard-role">Who I am</p>
         <p>A Provisional Psychologist working with people across the lifespan, with an authentic and
@@ -39,8 +41,8 @@
         <a href="#about-detail" class="btn btn-outline btn-sm">Read more</a>
       </article>
 
-      <article class="pcard" id="help">
-        <div class="pcard-photo"><img src="{% static 'core/images/help.jpg' %}" alt="A calm, comfortable space for therapy"></div>
+      <article class="pcard" id="help" data-reveal style="--d:0.14s">
+        <div class="pcard-photo"><img src="{% static 'core/images/help.jpg' %}" width="1000" height="750" loading="lazy" decoding="async" alt="A calm, comfortable space for therapy"></div>
         <h3>How I help</h3>
         <p class="pcard-role">What I focus on</p>
         <p>Making space for feelings that have been ignored or pushed down, and for the patterns that keep
@@ -49,8 +51,8 @@
         <a href="#help-detail" class="btn btn-outline btn-sm">Explore</a>
       </article>
 
-      <article class="pcard" id="approach">
-        <div class="pcard-photo"><img src="{% static 'core/images/approach.jpg' %}" alt="A considered, evidence-based approach"></div>
+      <article class="pcard" id="approach" data-reveal style="--d:0.28s">
+        <div class="pcard-photo"><img src="{% static 'core/images/approach.jpg' %}" width="1000" height="750" loading="lazy" decoding="async" alt="A considered, evidence-based approach"></div>
         <h3>My approach</h3>
         <p class="pcard-role">How we'll work</p>
         <p>A psychological approach that is unhurried, collaborative, and curious about what lies beneath
@@ -65,9 +67,10 @@
 
 {# ───────────────────────── ABOUT (full bio) ───────────────────────── #}
 <section class="intro" id="about-detail">
-  <div class="container narrow">
+  <div class="container narrow" data-reveal>
     <p class="kicker">About Tahnee</p>
     <h2>Tahnee Crowther</h2>
+    <div class="bio">
     <p>Tahnee is a provisional psychologist who works with people across the lifespan from a person-centred
        foundation, drawing on narrative therapy and a range of evidence-based practices including ACT, MI, and
        Trauma-Focused CBT.</p>
@@ -78,12 +81,13 @@
        Outside of her clinical work, she is engaged in qualitative research exploring how people understand and
        make meaning of diverse and transformative experiences.</p>
     <p>Tahnee holds a Bachelor of Psychology and is completing a Master of Clinical Psychology.</p>
+    </div>
   </div>
 </section>
 
 {# ───────────────────────── REFLECTIVE LINE ───────────────────────── #}
 <section class="reflect">
-  <div class="container">
+  <div class="container" data-reveal>
     <p>“Your vision will become clear only when you can look into your own heart.
        Who looks outside, dreams; who looks inside, awakes.”</p>
     <span class="attrib">C. G. Jung · letter, 1916</span>
@@ -92,7 +96,7 @@
 
 {# ───────────────────────── AREAS (airy tag list) ───────────────────────── #}
 <section class="areas" id="help-detail">
-  <div class="container">
+  <div class="container" data-reveal>
     <p class="kicker">How I help</p>
     <h2>What we might explore</h2>
     <div class="tag-list">
