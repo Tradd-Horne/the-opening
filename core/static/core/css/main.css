@@ -182,7 +182,7 @@ p { margin: 0 0 1.1rem; }
 .footer-menu.right { text-align: right; }
 .footer-brand { text-align: center; }
 .footer-ack { max-width: 760px; margin: 3rem auto 0; text-align: center; }
-.footer-ack h4 { font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.68rem; color: var(--ink-mute); margin: 0 0 0.8rem; }
+.footer-ack h2 { font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.68rem; color: var(--ink-mute); margin: 0 0 0.8rem; }
 .footer-ack p { font-size: 0.85rem; color: var(--ink-mute); margin: 0; }
 .footer-base { text-align: center; margin-top: 2.6rem; font-size: 0.78rem; color: var(--ink-mute); }
 .footer-base span { display: block; }
