@@ -5,12 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% block title %}The Opening — Tahnee Crowther, Provisional Psychologist{% endblock %}</title>
-  <meta name="description" content="{% block meta_description %}The Opening — Tahnee Crowther, Provisional Psychologist. Psychology that makes room for the feelings and patterns we have learned to set aside. Self-funded, NDIS and WorkCover.{% endblock %}">
+  <meta name="description" content="{% block meta_description %}Tahnee Crowther, Provisional Psychologist. Psychology that makes room for the feelings and patterns we set aside. Private, NDIS and WorkCover.{% endblock %}">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#7f9b6a">
   <link rel="canonical" href="https://theopening.com.au/">
 
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_AU">
   <meta property="og:site_name" content="The Opening">
   <meta property="og:title" content="The Opening — Tahnee Crowther, Provisional Psychologist">
   <meta property="og:description" content="Psychology that makes room for the feelings and patterns we have learned to set aside.">
@@ -23,7 +24,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   {# Jost = geometric sans (Futura-like display/wordmark); Mulish = humanist body (Proxima-like). #}
-  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;1,300&family=Mulish:wght@300;400;500;600&display=swap" rel="stylesheet">
+  {# Fonts load without blocking first paint; display=swap shows system text until they arrive. #}
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;1,300&family=Mulish:wght@300;400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;1,300&family=Mulish:wght@300;400;500;600&display=swap"></noscript>
 
   <link rel="preload" as="image" href="{% static 'core/images/hero.jpg' %}">
   <link rel="stylesheet" href="{% static 'core/css/main.css' %}">
@@ -37,7 +40,13 @@
     "url": "https://theopening.com.au/",
     "email": "contact@theopening.com.au",
     "telephone": "+61485047037",
-    "image": "https://theopening.com.au{% static 'core/images/tahnee.jpg' %}"
+    "image": "https://theopening.com.au{% static 'core/images/tahnee.jpg' %}",
+    "founder": {
+      "@type": "Person",
+      "name": "Tahnee Crowther",
+      "jobTitle": "Provisional Psychologist",
+      "image": "https://theopening.com.au{% static 'core/images/tahnee.jpg' %}"
+    }
   }
   </script>
 </head>
