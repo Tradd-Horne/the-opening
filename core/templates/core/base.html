@@ -25,6 +25,7 @@
   {# Jost = geometric sans (Futura-like display/wordmark); Mulish = humanist body (Proxima-like). #}
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;1,300&family=Mulish:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+  <link rel="preload" as="image" href="{% static 'core/images/hero.jpg' %}">
   <link rel="stylesheet" href="{% static 'core/css/main.css' %}">
 
   <script type="application/ld+json">
@@ -102,12 +103,6 @@
     </div>
   </footer>
 
-  <script>
-    document.querySelector('.nav-toggle')?.addEventListener('click', function () {
-      document.querySelector('.nav-left')?.classList.toggle('open');
-      const x = this.getAttribute('aria-expanded') === 'true';
-      this.setAttribute('aria-expanded', String(!x));
-    });
-  </script>
+  <script src="{% static 'core/js/main.js' %}" defer></script>
 </body>
 </html>
