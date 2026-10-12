@@ -1,98 +1,111 @@
-{% load static %}<!DOCTYPE html>
-<html lang="en">
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-au">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}The Opening{% endblock %}</title>
-    <meta name="description" content="{% block meta_description %}The Opening — psychology with Tahnee Crowther, provisional psychologist. Person-centred, narrative and evidence-based therapy across the lifespan.{% endblock %}">
-    <script>
-        // Prevent flash of wrong theme
-        (function() {
-            var theme = localStorage.getItem('theme');
-            if (theme) {
-                document.documentElement.setAttribute('data-theme', theme);
-            }
-        })();
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'core/css/main.css' %}">
-    {% block extra_head %}{% endblock %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}The Opening — Tahnee Crowther, Provisional Psychologist{% endblock %}</title>
+  <meta name="description" content="{% block meta_description %}The Opening — Tahnee Crowther, Provisional Psychologist. Person-centred therapy for people across the lifespan, drawing on narrative therapy, ACT, MI and Trauma-Focused CBT. Self-funded, NDIS and WorkCover.{% endblock %}">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#7f9b6a">
+  <link rel="canonical" href="https://theopening.com.au/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="The Opening">
+  <meta property="og:title" content="The Opening — Tahnee Crowther, Provisional Psychologist">
+  <meta property="og:description" content="Person-centred, evidence-based therapy for people across the lifespan.">
+  <meta property="og:url" content="https://theopening.com.au/">
+  <meta property="og:image" content="https://theopening.com.au{% static 'core/images/tahnee.jpg' %}">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/svg+xml" href="{% static 'core/favicon.svg' %}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  {# Jost = geometric sans (Futura-like display/wordmark); Mulish = humanist body (Proxima-like). #}
+  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;1,300&family=Mulish:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{% static 'core/css/main.css' %}">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["MedicalBusiness", "ProfessionalService"],
+    "name": "The Opening",
+    "description": "Psychology with Tahnee Crowther, Provisional Psychologist — person-centred, drawing on narrative therapy, ACT, MI and Trauma-Focused CBT, for people across the lifespan.",
+    "url": "https://theopening.com.au/",
+    "email": "contact@theopening.com.au",
+    "image": "https://theopening.com.au{% static 'core/images/tahnee.jpg' %}"
+  }
+  </script>
 </head>
 <body>
+  <a href="#content" class="skip-link">Skip to content</a>
 
-    <!-- Header / Navigation -->
-    <header class="header" role="banner">
-        <nav class="nav" role="navigation" aria-label="Main navigation">
-            <a href="{% url 'index' %}" class="nav__brand">THE OPENING</a>
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <nav class="nav-left" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#help">How I help</a>
+        <a href="#approach">Approach</a>
+      </nav>
+      <a href="/" class="brand">
+        <span class="brand-name">The Opening</span>
+        <span class="brand-sub">with Tahnee Crowther</span>
+      </a>
+      <div class="nav-right">
+        <a href="#contact" class="navlink">Contact</a>
+        <a href="#contact" class="btn btn-sm">Enquire</a>
+      </div>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
 
-            <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
-                <span class="nav__hamburger-line"></span>
-                <span class="nav__hamburger-line"></span>
-            </button>
+  <main id="content">{% block content %}{% endblock %}</main>
 
-            <ul class="nav__links" id="nav-menu" role="list">
-                <li><a href="{% url 'about' %}" data-underline>About</a></li>
-                <li><a href="{% url 'services' %}" data-underline>Services</a></li>
-                <li><a href="{% url 'contact' %}" data-underline>Contact</a></li>
-            </ul>
-
-            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode">
-                <svg class="theme-toggle__icon theme-toggle__sun" viewBox="0 0 24 24" aria-hidden="true">
-                    <circle cx="12" cy="12" r="5"></circle>
-                    <line x1="12" y1="1" x2="12" y2="3"></line>
-                    <line x1="12" y1="21" x2="12" y2="23"></line>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                    <line x1="1" y1="12" x2="3" y2="12"></line>
-                    <line x1="21" y1="12" x2="23" y2="12"></line>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                </svg>
-                <svg class="theme-toggle__icon theme-toggle__moon" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                </svg>
-            </button>
-        </nav>
-    </header>
-
-    <!-- Mobile Menu Overlay -->
-    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-        <ul class="mobile-menu__links" role="list">
-            <li><a href="{% url 'about' %}">About</a></li>
-            <li><a href="{% url 'services' %}">Services</a></li>
-            <li><a href="{% url 'contact' %}">Contact</a></li>
-        </ul>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <nav class="footer-menu" aria-label="Footer">
+        <a href="#top">Home</a>
+        <a href="#about">About Tahnee</a>
+        <a href="#help">How I help</a>
+        <a href="#approach">My approach</a>
+      </nav>
+      <div class="footer-brand">
+        <span class="brand-name">The Opening</span>
+        <span class="brand-sub">with Tahnee Crowther</span>
+      </div>
+      <nav class="footer-menu right" aria-label="Footer secondary">
+        <a href="#contact">Contact</a>
+        <a href="mailto:contact@theopening.com.au">contact@theopening.com.au</a>
+      </nav>
     </div>
 
-    <!-- Main Content -->
-    <main role="main">
-        {% block content %}{% endblock %}
-    </main>
+    <div class="container footer-ack">
+      <h4>Acknowledgment of Country</h4>
+      <p>We acknowledge the Traditional Custodians of the lands and waters across Australia on which we live
+         and work, and we pay our respects to Elders past and present.</p>
+    </div>
 
-    <!-- Footer -->
-    <footer class="footer" role="contentinfo">
-        <div class="footer__inner">
-            <div class="footer__top">
-                <div class="footer__brand">The Opening</div>
-                <ul class="footer__links" role="list">
-                    <li><a href="{% url 'about' %}" data-underline>About</a></li>
-                    <li><a href="{% url 'services' %}" data-underline>Services</a></li>
-                    <li><a href="{% url 'contact' %}" data-underline>Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer__bottom">
-                <p>This website is not for emergencies. If you or someone else is in danger, call 000. For 24-hour crisis support, call Lifeline on 13 11 14.</p>
-                <p>&copy; <span id="footer-year">2026</span> The Opening. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <div class="container footer-ack">
+      <h4>In an emergency</h4>
+      <p>This website is not for emergencies. If you or someone else is in danger, call 000.
+         For 24-hour crisis support, call Lifeline on 13 11 14.</p>
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
-    <script src="{% static 'core/js/main.js' %}"></script>
-    {% block extra_js %}{% endblock %}
+    <div class="container footer-base">
+      <span>&copy; {% now "Y" %} The Opening · Tahnee Crowther, Provisional Psychologist</span>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelector('.nav-toggle')?.addEventListener('click', function () {
+      document.querySelector('.nav-left')?.classList.toggle('open');
+      const x = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', String(!x));
+    });
+  </script>
 </body>
 </html>
