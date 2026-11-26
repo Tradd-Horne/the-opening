@@ -4,39 +4,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% block title %}The Opening — Tahnee Crowther, Provisional Psychologist{% endblock %}</title>
-  <meta name="description" content="{% block meta_description %}Tahnee Crowther, Provisional Psychologist. Psychology that makes room for the feelings and patterns we set aside. Private, NDIS and WorkCover.{% endblock %}">
+  <title>{% block title %}The Opening — Psychotherapy and creative consulting with Tahnee Crowther{% endblock %}</title>
+  <meta name="description" content="{% block meta_description %}The Opening: psychotherapy and creative consulting with Tahnee Crowther, Provisional Psychologist. Depth work for creative lives, makers and teams.{% endblock %}">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#7f9b6a">
-  <link rel="canonical" href="https://theopening.com.au/">
+  <meta name="theme-color" content="#0b0b0b">
+  <link rel="canonical" href="https://theopening.com.au{{ request.path }}">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_AU">
   <meta property="og:site_name" content="The Opening">
-  <meta property="og:title" content="The Opening — Tahnee Crowther, Provisional Psychologist">
-  <meta property="og:description" content="Psychology that makes room for the feelings and patterns we have learned to set aside.">
-  <meta property="og:url" content="https://theopening.com.au/">
-  <meta property="og:image" content="https://theopening.com.au{% static 'core/images/tahnee.jpg' %}">
+  <meta property="og:title" content="{% block og_title %}The Opening — Tahnee Crowther, Provisional Psychologist{% endblock %}">
+  <meta property="og:description" content="Psychotherapy and creative consulting. Depth work for creative lives.">
+  <meta property="og:url" content="https://theopening.com.au{{ request.path }}">
+  <meta property="og:image" content="https://theopening.com.au{% static 'core/images/hero-light.webp' %}">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="icon" type="image/svg+xml" href="{% static 'core/favicon.svg' %}">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  {# Jost = geometric sans (Futura-like display/wordmark); Mulish = humanist body (Proxima-like). #}
-  {# Fonts load without blocking first paint; display=swap shows system text until they arrive. #}
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;1,300&family=Mulish:wght@300;400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;1,300&family=Mulish:wght@300;400;500;600&display=swap"></noscript>
-
-  <link rel="preload" as="image" href="{% static 'core/images/hero.jpg' %}">
+  {# Self-hosted fonts: Inter Tight (thin grotesk, nearest free face to Oxman's Neue Haas Display) + Instrument Serif italic for single accent words. #}
+  <link rel="preload" as="font" type="font/woff2" href="{% static 'core/fonts/inter-tight-normal.woff2' %}" crossorigin>
+  <link rel="stylesheet" href="{% static 'core/fonts/fonts.css' %}">
   <link rel="stylesheet" href="{% static 'core/css/main.css' %}">
+  {% block head_extra %}{% endblock %}
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": ["MedicalBusiness", "ProfessionalService"],
     "name": "The Opening",
-    "description": "Psychology with Tahnee Crowther, Provisional Psychologist — person-centred, drawing on narrative therapy, ACT, MI and Trauma-Focused CBT, for people across the lifespan.",
+    "description": "Psychotherapy and creative consulting with Tahnee Crowther, Provisional Psychologist.",
     "url": "https://theopening.com.au/",
     "email": "contact@theopening.com.au",
     "telephone": "+61485047037",
@@ -53,66 +49,54 @@
      do NOT add form or phone event tracking. data-domains stops local previews counting.{% endcomment %}
   <script defer src="https://analytics.tradd.net/script.js" data-website-id="ae8d1010-695b-414a-9fc1-5de431e8e5b6" data-domains="theopening.com.au"></script>
 </head>
-<body>
+<body class="{% block body_class %}{% endblock %}">
   <a href="#content" class="skip-link">Skip to content</a>
 
+  {# Oxman layout: thin wordmark top-left, a small stacked menu at top-right. #}
   <header class="site-header" id="top">
-    <div class="container header-inner">
-      <nav class="nav-left" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#help">How I help</a>
-        <a href="#approach">Approach</a>
-      </nav>
-      <a href="/" class="brand">
-        <span class="brand-name">The Opening</span>
-        <span class="brand-sub">with Tahnee Crowther</span>
-      </a>
-      <div class="nav-right">
-        <a href="#contact" class="navlink">Contact</a>
-        <a href="#contact" class="btn btn-sm">Enquire</a>
-      </div>
-      <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
+    <a href="/" class="wordmark" aria-label="The Opening, home">The Opening</a>
+    <nav class="menu" aria-label="Primary">
+      {% with p=request.path %}
+      <a href="/mission/"{% if p == '/mission/' %} aria-current="page"{% endif %}>Mission</a>
+      <a href="/practice/"{% if p == '/practice/' %} aria-current="page"{% endif %}>Practice</a>
+      <a href="/work/"{% if p == '/work/' %} aria-current="page"{% endif %}>Work</a>
+      <a href="/contact/"{% if p == '/contact/' %} aria-current="page"{% endif %}>Contact</a>
+      {% endwith %}
+    </nav>
   </header>
 
   <main id="content">{% block content %}{% endblock %}</main>
 
   <footer class="site-footer">
-    <div class="container footer-grid">
-      <nav class="footer-menu" aria-label="Footer">
-        <a href="#top">Home</a>
-        <a href="#about">About Tahnee</a>
-        <a href="#help">How I help</a>
-        <a href="#approach">My approach</a>
-      </nav>
-      <div class="footer-brand">
-        <span class="brand-name">The Opening</span>
-        <span class="brand-sub">with Tahnee Crowther</span>
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="wordmark">The Opening</span>
+        <span class="foot-sub">Tahnee Crowther, Provisional Psychologist</span>
       </div>
-      <nav class="footer-menu right" aria-label="Footer secondary">
-        <a href="#contact">Contact</a>
+      <nav class="foot-col" aria-label="Footer">
+        <a href="/mission/">Mission</a>
+        <a href="/practice/">Practice</a>
+        <a href="/work/">Work</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+      <div class="foot-col">
         <a href="mailto:contact@theopening.com.au">contact@theopening.com.au</a>
         <a href="tel:+61485047037">0485 047 037</a>
-      </nav>
+      </div>
     </div>
-
-    <div class="container footer-ack">
-      <h2>Acknowledgment of Country</h2>
-      <p>We acknowledge the Traditional Custodians of the lands and waters across Australia on which we live
-         and work, and we pay our respects to Elders past and present.</p>
+    <div class="foot-notes">
+      <div>
+        <h2>Acknowledgment of Country</h2>
+        <p>We acknowledge the Traditional Custodians of the lands and waters across Australia on which we live
+           and work, and we pay our respects to Elders past and present.</p>
+      </div>
+      <div>
+        <h2>In an emergency</h2>
+        <p>This website is not for emergencies. If you or someone else is in danger, call 000.
+           For 24-hour crisis support, call Lifeline on 13 11 14.</p>
+      </div>
     </div>
-
-    <div class="container footer-ack">
-      <h2>In an emergency</h2>
-      <p>This website is not for emergencies. If you or someone else is in danger, call 000.
-         For 24-hour crisis support, call Lifeline on 13 11 14.</p>
-    </div>
-
-    <div class="container footer-base">
-      <span>&copy; {% now "Y" %} The Opening · Tahnee Crowther, Provisional Psychologist</span>
-    </div>
+    <p class="foot-base">&copy; {% now "Y" %} The Opening</p>
   </footer>
 
   <script src="{% static 'core/js/main.js' %}" defer></script>

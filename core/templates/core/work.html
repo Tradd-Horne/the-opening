@@ -1,0 +1,57 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Work — Psychotherapy and creative consulting — The Opening{% endblock %}
+{% block og_title %}Work — The Opening{% endblock %}
+{% block meta_description %}Psychotherapy for creative people, and creative consulting and workshops for creative teams. Tahnee Crowther, Provisional Psychologist.{% endblock %}
+{% block body_class %}dark{% endblock %}
+
+{% block content %}
+
+<section class="page-head">
+  <h1 class="display">Work</h1>
+  <p class="lede" data-reveal>Two ways to work together: one-to-one psychotherapy, and consulting for creative groups.</p>
+</section>
+
+<section class="work-item">
+  <hr class="rule" data-reveal>
+  <span class="num">01</span>
+  <h2 class="giant" data-reveal>Psychotherapy</h2>
+  <div class="threshold-body">
+    <figure class="disc" data-reveal><img src="{% static 'core/images/room.webp' %}" alt="A quiet room with two armchairs facing each other" width="1280" height="720" loading="lazy" decoding="async"></figure>
+    <div class="prose">
+      <p class="question" data-reveal>For writers, artists, musicians, designers and anyone whose life runs on making.</p>
+      <p>One-to-one sessions that make space for the feelings and patterns that sit beneath the work:
+         blocks that will not shift, the inner critic, reactions that feel bigger than the moment, and
+         the experiences that have changed you.</p>
+      <ul class="tags">
+        <li>Creative blocks</li><li>Patterns that repeat</li><li>Feelings held back</li>
+        <li>Identity &amp; meaning</li><li>Transformative experiences</li><li>Trauma</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="work-item">
+  <hr class="rule" data-reveal>
+  <span class="num">02</span>
+  <h2 class="giant" data-reveal>Consulting</h2>
+  <div class="threshold-body">
+    <figure class="disc" data-reveal><img src="{% static 'core/images/studio.webp' %}" alt="An empty artist's studio with paper pinned to the wall" width="1280" height="720" loading="lazy" decoding="async"></figure>
+    <div class="prose">
+      <p class="question" data-reveal>For studios, collectives, schools and organisations that make creative work.</p>
+      <p>Talks, workshops and reflective sessions on creativity and the inner life: how feeling shapes
+         making, how groups can hold uncertainty, and how to care for the people who do the work.</p>
+      <ul class="tags">
+        <li>Workshops</li><li>Talks</li><li>Reflective practice</li><li>Creative teams</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <p class="lede" data-reveal>Not sure which fits? Start with a conversation.</p>
+  <a class="enter" href="/contact/">Enter <b>Contact</b></a>
+</section>
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Practice — Tahnee Crowther, Provisional Psychologist — The Opening{% endblock %}
+{% block og_title %}Practice — The Opening{% endblock %}
+{% block meta_description %}About Tahnee Crowther, Provisional Psychologist: person-centred psychotherapy drawing on narrative therapy, ACT, MI and Trauma-Focused CBT.{% endblock %}
+{% block body_class %}light{% endblock %}
+
+{% block content %}
+
+<section class="page-head">
+  <h1 class="display">Practice</h1>
+  <p class="lede" data-reveal>The Opening is the practice of Tahnee Crowther, a Provisional Psychologist who brings
+     depth, care and <em>curiosity</em> to creative lives.</p>
+</section>
+
+<section class="person">
+  <figure class="disc disc-lg" data-reveal><img src="{% static 'core/images/tahnee-sq.webp' %}" alt="Tahnee Crowther, Provisional Psychologist" width="720" height="720" loading="lazy" decoding="async"></figure>
+  <div class="prose" data-reveal>
+    <h2 class="label">Tahnee Crowther</h2>
+    <p>Tahnee is a Provisional Psychologist who works with people across the lifespan from a person-centred
+       foundation, drawing on narrative therapy and a range of evidence-based practices including ACT, MI and
+       Trauma-Focused CBT.</p>
+    <p>She brings an authentic and collaborative style, and an openness to the many ways people understand
+       and express their own experience.</p>
+    <p>Outside her clinical work, she is engaged in qualitative research exploring how people understand and
+       make meaning of diverse and transformative experiences.</p>
+    <p>She welcomes First Nations peoples, LGBTIQA+ communities, and those navigating intersecting identities.</p>
+    <p class="small">Bachelor of Psychology. Completing a Master of Clinical Psychology.</p>
+  </div>
+</section>
+
+<section class="values">
+  <hr class="rule">
+  <h2 class="label">Values</h2>
+  <div class="pair" data-reveal>
+    <div><h3>Rigour</h3><p>Evidence-based, careful and honest work, grounded in good practice.</p></div>
+    <div><h3><em>Play</em></h3><p>Room for surprise, imagination and the unexpected turn.</p></div>
+  </div>
+  <div class="pair" data-reveal>
+    <div><h3>Depth</h3><p>A willingness to stay with what is hard, and to go slowly.</p></div>
+    <div><h3><em>Wonder</em></h3><p>Questions held open, rather than closed too soon.</p></div>
+  </div>
+  <div class="pair" data-reveal>
+    <div><h3>Care</h3><p>A safe, respectful space where you set the pace.</p></div>
+    <div><h3><em>Courage</em></h3><p>Turning toward the parts of ourselves we learned to avoid.</p></div>
+  </div>
+</section>
+
+<section class="closing">
+  <a class="enter" href="/contact/">Enter <b>Contact</b></a>
+</section>
+
+{% endblock %}

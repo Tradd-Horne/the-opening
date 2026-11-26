@@ -1,134 +1,77 @@
 {% extends 'core/base.html' %}
 {% load static %}
 
+{% block body_class %}dark{% endblock %}
+
 {% block content %}
 
-{# ───────────────────────── HERO ───────────────────────── #}
+{# ───── HERO: full-bleed image, one thin circle (the opening), letters settle in ───── #}
 <section class="hero">
-  <div class="hero-media"><img src="{% static 'core/images/hero.jpg' %}" alt="" width="1600" height="900" fetchpriority="high"></div>
-  <h1 data-reveal style="--d:.15s">Open to what<br>lies within.</h1>
-  <p class="hero-sub" data-reveal style="--d:.35s">Psychology that makes room for the feelings and patterns we have learned to set aside.</p>
-  <a href="#contact" class="btn btn-light" data-reveal style="--d:.55s">Enquire now</a>
-  <span class="hero-scroll" aria-hidden="true"></span>
+  <img class="hero-img" src="{% static 'core/images/hero-light.webp' %}" alt="" width="1280" height="720" fetchpriority="high">
+  <div class="hero-ring" aria-hidden="true"></div>
+  <h1 class="hero-title"><span class="split">Make room for what wants to emerge</span></h1>
+  <a href="#statement" class="hero-down" aria-label="Scroll down"></a>
 </section>
 
-<div class="divider"><span></span></div>
-
-{# ───────────────────────── INTRO ───────────────────────── #}
-<section class="intro">
-  <div class="container narrow" data-reveal>
-    <p>Much of what shapes us sits just out of view — feelings we have learned to quieten, reactions that
-       seem to come from nowhere, patterns that repeat no matter how hard we try. Therapy with Tahnee is a
-       space to slow down and turn toward those parts of yourself: to notice them, to understand where they
-       come from, and to let them be heard.</p>
-    <p class="lead-strong">What might open up, if you stopped holding it all at a distance?</p>
-    <a href="#contact" class="btn">Make an enquiry</a>
-  </div>
+{# ───── STATEMENT ───── #}
+<section class="statement" id="statement">
+  <p class="lede" data-reveal>The Opening is a psychotherapy and creative consulting practice. It brings depth psychology
+     to the creative life, so that what we feel and what we make can meet.</p>
 </section>
 
-{# ───────────────────────── THREE PHOTO-CARDS ───────────────────────── #}
-<section class="cards">
-  <div class="container">
-    <div class="cards-grid">
-
-      <article class="pcard" id="about" data-reveal style="--d:0.00s">
-        <div class="pcard-photo"><img src="{% static 'core/images/tahnee.jpg' %}" width="1109" height="832" loading="lazy" decoding="async" alt="Tahnee Crowther, Provisional Psychologist"></div>
-        <h2>About Tahnee</h2>
-        <p class="pcard-role">Who I am</p>
-        <p>A Provisional Psychologist working with people across the lifespan, with an authentic and
-           collaborative style and an openness to the many ways people understand and express their own
-           experience.</p>
-        <a href="#about-detail" class="btn btn-outline btn-sm">Read more</a>
-      </article>
-
-      <article class="pcard" id="help" data-reveal style="--d:0.14s">
-        <div class="pcard-photo"><img src="{% static 'core/images/help.jpg' %}" width="1000" height="750" loading="lazy" decoding="async" alt="A calm, comfortable space for therapy"></div>
-        <h2>How I help</h2>
-        <p class="pcard-role">What I focus on</p>
-        <p>Making space for feelings that have been ignored or pushed down, and for the patterns that keep
-           returning. An interest in perinatal psychology and early parenthood, and available to connect with
-           parent groups and community settings.</p>
-        <a href="#help-detail" class="btn btn-outline btn-sm">Explore</a>
-      </article>
-
-      <article class="pcard" id="approach" data-reveal style="--d:0.28s">
-        <div class="pcard-photo"><img src="{% static 'core/images/approach.jpg' %}" width="1000" height="750" loading="lazy" decoding="async" alt="A considered, evidence-based approach"></div>
-        <h2>My approach</h2>
-        <p class="pcard-role">How we'll work</p>
-        <p>A psychological approach that is unhurried, collaborative, and curious about what lies beneath
-           the surface. Grounded in a person-centred foundation and drawing on narrative therapy, ACT, MI and
-           Trauma-Focused CBT where they help.</p>
-        <a href="#contact" class="btn btn-outline btn-sm">Get started</a>
-      </article>
-
+{# ───── THREE THRESHOLDS (Oxman's rule + giant word + question + Enter link) ───── #}
+<section class="threshold">
+  <hr class="rule" data-reveal>
+  <h2 class="giant" data-reveal>Expression</h2>
+  <div class="threshold-body">
+    <figure class="disc" data-reveal><img src="{% static 'core/images/studio.webp' %}" alt="An empty artist's studio with paper pinned to the wall" width="1280" height="720" loading="lazy" decoding="async"></figure>
+    <div>
+      <p class="question" data-reveal>What wants to be made through you, and what stands in its way?</p>
+      <a class="enter" href="/work/">Enter <b>Work</b></a>
     </div>
   </div>
 </section>
 
-{# ───────────────────────── ABOUT (full bio) ───────────────────────── #}
-<section class="intro" id="about-detail">
-  <div class="container narrow" data-reveal>
-    <p class="kicker">About Tahnee</p>
-    <h2>Tahnee Crowther</h2>
-    <div class="bio">
-    <p>Tahnee is a provisional psychologist who works with people across the lifespan from a person-centred
-       foundation, drawing on narrative therapy and a range of evidence-based practices including ACT, MI, and
-       Trauma-Focused CBT.</p>
-    <p>She brings an authentic and collaborative style, and has an openness to the many ways people understand
-       and express their own experience. She has an interest in perinatal psychology and is available to
-       connect with parent groups and community settings.</p>
-    <p>She welcomes First Nations peoples, LGBTIQA+ communities, and those navigating intersecting identities.
-       Outside of her clinical work, she is engaged in qualitative research exploring how people understand and
-       make meaning of diverse and transformative experiences.</p>
-    <p>Tahnee holds a Bachelor of Psychology and is completing a Master of Clinical Psychology.</p>
+<section class="threshold">
+  <hr class="rule" data-reveal>
+  <h2 class="giant" data-reveal>Depth</h2>
+  <div class="threshold-body">
+    <figure class="disc" data-reveal><img src="{% static 'core/images/water.webp' %}" alt="A single ripple spreading on dark water" width="1280" height="720" loading="lazy" decoding="async"></figure>
+    <div>
+      <p class="question" data-reveal>Can the feelings we push away become the source of our best work?</p>
+      <a class="enter" href="/mission/">Enter <b>Mission</b></a>
     </div>
   </div>
 </section>
 
-{# ───────────────────────── REFLECTIVE LINE ───────────────────────── #}
-<section class="reflect">
-  <div class="container" data-reveal>
-    <p>“Your vision will become clear only when you can look into your own heart.
-       Who looks outside, dreams; who looks inside, awakes.”</p>
-    <span class="attrib">C. G. Jung · letter, 1916</span>
-  </div>
-</section>
-
-{# ───────────────────────── AREAS (airy tag list) ───────────────────────── #}
-<section class="areas" id="help-detail">
-  <div class="container" data-reveal>
-    <p class="kicker">How I help</p>
-    <h2>What we might explore</h2>
-    <div class="tag-list">
-      <span>Feelings held back or pushed down</span>
-      <span>Patterns that keep repeating</span>
-      <span>Reactions that feel bigger than the moment</span>
-      <span>Trauma</span>
-      <span>Meaning &amp; identity</span>
-      <span>Perinatal &amp; early parenthood</span>
-    </div>
-    <h2 style="margin-top:3rem">Who I work with</h2>
-    <div class="tag-list">
-      <span>People across the lifespan</span>
-      <span>Parent groups &amp; community settings</span>
-      <span>First Nations peoples</span>
-      <span>LGBTIQA+ communities</span>
-      <span>Intersecting identities</span>
-    </div>
-    <p class="kicker" style="margin-top:2.6rem">Funding</p>
-    <div class="tag-list">
-      <span>Self-funded / Private</span>
-      <span>NDIS</span>
-      <span>WorkCover</span>
+<section class="threshold">
+  <hr class="rule" data-reveal>
+  <h2 class="giant" data-reveal>Meaning</h2>
+  <div class="threshold-body">
+    <figure class="disc" data-reveal><img src="{% static 'core/images/forest.webp' %}" alt="An opening in the rainforest canopy, seen from below" width="1280" height="720" loading="lazy" decoding="async"></figure>
+    <div>
+      <p class="question" data-reveal>How do people make sense of the experiences that change them?</p>
+      <a class="enter" href="/practice/">Enter <b>Practice</b></a>
     </div>
   </div>
 </section>
 
-{# ───────────────────────── GREEN TRI-BLOCK CTA ───────────────────────── #}
-<section class="cta-tri" id="contact">
-  <a href="mailto:contact@theopening.com.au">Email us<small>contact@theopening.com.au</small></a>
-  <a href="tel:+61485047037">Call us<small>0485 047 037</small></a>
-  <a href="#help-detail">Funding<small>Private · NDIS · WorkCover</small></a>
+{# ───── CIRCLE OF LETTERS (Oxman's "ENTER LAB") ───── #}
+<section class="orbit-wrap">
+  <hr class="rule">
+  <a href="/contact/" class="orbit" aria-label="Begin a conversation">
+    <svg viewBox="0 0 300 300" aria-hidden="true">
+      <defs><path id="orbit-path" d="M150,150 m-120,0 a120,120 0 1,1 240,0 a120,120 0 1,1 -240,0"/></defs>
+      <text><textPath href="#orbit-path" textLength="748">BEGIN A CONVERSATION · BEGIN A CONVERSATION ·</textPath></text>
+    </svg>
+    <span class="orbit-core">Contact</span>
+  </a>
+</section>
+
+{# ───── CLOSING LINE ───── #}
+<section class="closing">
+  <p class="lede" data-reveal>We imagine a life where the inner world and the made world <em>open</em> into each other.</p>
+  <a class="enter" href="/contact/">Enter <b>Contact</b></a>
 </section>
 
 {% endblock %}
