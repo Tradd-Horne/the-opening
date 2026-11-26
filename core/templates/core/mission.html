@@ -1,0 +1,64 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Mission — The Opening{% endblock %}
+{% block og_title %}Mission — The Opening{% endblock %}
+{% block meta_description %}The Opening's mission: a radical return to depth in creative life. Psychotherapy and creative consulting with Tahnee Crowther, Provisional Psychologist.{% endblock %}
+{% block body_class %}dark{% endblock %}
+
+{% block content %}
+
+<section class="page-head">
+  <h1 class="display">Mission</h1>
+  <p class="lede" data-reveal>The Opening is rethinking how we care for the creative life, so that feeling and making can move together.</p>
+</section>
+
+<section class="band band-img" data-reveal>
+  <img src="{% static 'core/images/hero-light.webp' %}" alt="Daylight falling through a round opening into a dark stone room" width="1280" height="720" loading="lazy" decoding="async">
+</section>
+
+<section class="prose-grid">
+  <h2 class="label">Position</h2>
+  <div class="prose">
+    <p>Many of us are taught to keep our inner lives at a distance. We learn to quieten feelings, to work
+       through exhaustion, to make things that look finished while something underneath stays unspoken.</p>
+    <p>For people who make things, that distance has a cost. The block, the loop, the work that will not
+       come — these are often the places where something important is asking to be heard.</p>
+  </div>
+</section>
+
+<section class="prose-grid">
+  <h2 class="label">Approach</h2>
+  <div class="prose">
+    <p>The Opening proposes a radical return to depth: slowing down, turning toward what has been set aside,
+       and treating it as material rather than as a fault to be fixed.</p>
+    <p>The work is grounded in a person-centred foundation and draws on narrative therapy, ACT, MI and
+       Trauma-Focused CBT where they help. It is unhurried, collaborative and curious.</p>
+  </div>
+</section>
+
+<section class="axis" data-reveal>
+  <span>Feeling</span><span class="times" aria-hidden="true">×</span><span>Making</span>
+  <p>The × asks for a radical realignment between the inner world and the made world, so that each can
+     feed the other.</p>
+</section>
+
+<section class="principles">
+  <hr class="rule">
+  <h2 class="label">First principles</h2>
+  <ol class="roman">
+    <li data-reveal><b>Feeling as material</b><span>What we feel is not in the way of the work. It is often the work.</span></li>
+    <li data-reveal><b>Depth over speed</b><span>Real change takes the time it takes. We make room for that.</span></li>
+    <li data-reveal><b>Curiosity over certainty</b><span>We ask questions before we reach for answers.</span></li>
+    <li data-reveal><b>The whole person</b><span>Creative life, work life and inner life are one system, not three.</span></li>
+    <li data-reveal><b>Many ways of knowing</b><span>We stay open to the many ways people understand and express their own experience.</span></li>
+    <li data-reveal><b>Rigour with play</b><span>Evidence-based practice, held lightly enough for surprise.</span></li>
+    <li data-reveal><b>Meaning over symptom</b><span>We look for what a pattern is trying to say, not only how to stop it.</span></li>
+  </ol>
+</section>
+
+<section class="closing">
+  <a class="enter" href="/work/">Enter <b>Work</b></a>
+</section>
+
+{% endblock %}

@@ -67,3 +67,12 @@ All headings: uppercase, letter-spacing -0.01em.
 - ARIA attributes on hamburger menu and mobile overlay
 - Screen-reader-only labels on form inputs
 - Semantic HTML throughout (header, nav, main, footer, article)
+
+## 26 Nov 2026 redesign (Tradd, Telegram msg 3321)
+Back to the Oxman language, now for Tahnee's creativity / psychotherapy consulting work, with
+artofwork.com.au's cream minimalism on the quieter pages. Pages: / · /mission/ · /practice/ · /work/ · /contact/.
+- Fonts: Inter Tight 100–600 (variable) + Instrument Serif italic for single accent words. Self-hosted.
+- Themes: `<body class="dark">` (black #0b0b0b) or `light` (cream #f4f1ea). Header uses mix-blend difference so it reads on both.
+- Motifs: one thin circle over the hero; every image in a disc; rule + giant word + question + "Enter X" link; rotating circle of letters.
+- Images in core/static/core/images/*.webp are Grok-generated (no people, no claims). Tahnee's photo is real.
+- Removed: NDIS / WorkCover (Tradd default, msg 3323). Title stays "Provisional Psychologist" until AHPRA shows the endorsement.

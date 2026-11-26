@@ -1,0 +1,41 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Contact — The Opening{% endblock %}
+{% block og_title %}Contact — The Opening{% endblock %}
+{% block meta_description %}Contact The Opening: psychotherapy and creative consulting with Tahnee Crowther, Provisional Psychologist. Email contact@theopening.com.au or call 0485 047 037.{% endblock %}
+{% block body_class %}light{% endblock %}
+
+{% block content %}
+
+{# Art of Work's opening question: pick who you are, see the one next step. Without JS every panel shows. #}
+<section class="you">
+  <h1 class="you-title">You <em>are…</em></h1>
+  <div class="you-choices" role="group" aria-label="Who are you?">
+    <button type="button" data-panel="p-self" aria-expanded="false">Seeking therapy</button>
+    <span aria-hidden="true">/</span>
+    <button type="button" data-panel="p-org" aria-expanded="false">An organisation</button>
+    <span aria-hidden="true">/</span>
+    <button type="button" data-panel="p-ref" aria-expanded="false">A referrer</button>
+  </div>
+
+  <div class="you-panel" id="p-self">
+    <h2>Let’s talk</h2>
+    <p>Send a short note about what brings you here. Tahnee will reply to arrange a time. Private and WorkCover clients are welcome.</p>
+    <a class="enter" href="mailto:contact@theopening.com.au?subject=Therapy%20enquiry">contact@theopening.com.au</a>
+    <a class="enter" href="tel:+61485047037">0485 047 037</a>
+  </div>
+  <div class="you-panel" id="p-org">
+    <h2>Work together</h2>
+    <p>Tell us about your group and what you have in mind: a talk, a workshop or something ongoing.</p>
+    <a class="enter" href="mailto:contact@theopening.com.au?subject=Consulting%20enquiry">contact@theopening.com.au</a>
+    <a class="enter" href="tel:+61485047037">0485 047 037</a>
+  </div>
+  <div class="you-panel" id="p-ref">
+    <h2>Referrals</h2>
+    <p>Referrals are welcome by email. Please do not send clinical details until we have spoken.</p>
+    <a class="enter" href="mailto:contact@theopening.com.au?subject=Referral">contact@theopening.com.au</a>
+    <a class="enter" href="tel:+61485047037">0485 047 037</a>
+  </div>
+</section>
+
+{% endblock %}
