@@ -106,8 +106,8 @@ section { padding: 0 var(--gutter); }
 .js .disc img { transform: scale(1.12); }
 .js .disc.is-in img { transform: scale(1); }
 .disc-lg { width: min(100%, 30rem); }
-.portrait { margin: 0; width: min(100%, 34rem); }
-.portrait img { width: 100%; height: auto; }
+.band-photo { padding-bottom: clamp(4rem, 9vw, 7rem); }
+.band-photo img { width: 100%; height: auto; }
 .prose .small { font-size: .9rem; margin-top: 1.2rem; }
 
 /* Circle of letters (Oxman "ENTER LAB") */
